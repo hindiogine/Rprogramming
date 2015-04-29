@@ -78,10 +78,10 @@ rankall <- function(outcome, num = "best")
   
   ## Check that state and outcome are valid
   temp <- grepl(state, states)
-  if(sum(temp)!=1) stop("invalid state")
+  if(sum(temp) != 1) stop("invalid state")
   valid.outcomes <- c("heart attack","heart failure","pneumonia")
   temp <- grepl(outcome, valid.outcomes)
-  if(sum(temp)!=1) stop("invalid outcome")  
+  if(sum(temp) != 1) stop("invalid outcome")  
   
   ## For each state, find the hospital of the given rank
   ## Return a data frame with the hospital names and the
