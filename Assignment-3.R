@@ -86,4 +86,14 @@ rankall <- function(outcome, num = "best")
   ## For each state, find the hospital of the given rank
   ## Return a data frame with the hospital names and the
   ## (abbreviated) state name
+  if(outcome == "heart attack") outcome.column <- 3
+  if(outcome == "heart failure") outcome.column <- 4
+  if(outcome == "pneumonia") outcome.column <- 5  
+  
+  hosp.data <- hosp.data[ , c(1,2, outcome.column)]
+  names(hosp.data) <- c("Name","State","Outcome")
+  
+  hosp.ranked <- hosp.data[order(hosp.data$State, hosp.data$Outcome), ]
+  
+  hosp.ranked.list <- split(hosp.ranked, factor(hosp.ranked$State))
 }
