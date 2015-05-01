@@ -1,3 +1,5 @@
+# load data from csv file
+#
 data <- read.csv("cities.csv")
 
 ## orderdata: output data.frame with the ordered rows
@@ -104,9 +106,9 @@ rank_by_country <- function(data, column, rank)
     ## the areakm2 [rank,2] and the populationk [rank,3]. We don't add the name of the countries, because it
     ## will be the label of the rows.
     output <- append(output, as.character(orderdata[rank, 1]))
-    for (l in 3:4)
+    for (j in 3:4)
     {
-      output <- append(output, as.character(orderdata[rank, l]))
+      output <- append(output, as.character(orderdata[rank, j]))
     }
   }
   
